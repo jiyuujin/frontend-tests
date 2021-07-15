@@ -1,6 +1,6 @@
 import { assert } from 'chai'
 
-import { findVowels } from '../../../src/main'
+import { findVowels } from '../../../src/services/vowelService'
 
 it('Result when input HELLO', () => {
     assert.equal(findVowels('HELLO'), 2)

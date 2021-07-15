@@ -1,4 +1,4 @@
-import { findVowels } from '../../../src/main'
+import { findVowels } from '../../../src/services/vowelService'
 
 it('Result when input HELLO', () => {
     expect(findVowels('HELLO')).toBe(2)
