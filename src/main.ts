@@ -1,4 +1,4 @@
-import { findVowels } from './services/vowelService';
+import { findVowels } from './services/vowelService'
 
 const vowelCount = findVowels('HELLO')
 console.log(vowelCount)
