@@ -1,5 +1,6 @@
 import { findVowels } from './services/vowelService'
 import { getPaymentTotal } from './services/paymentService'
+import { fetchAllPokemon } from './services/pokemonService'
 
 const vowelCount = findVowels('HELLO')
 console.log(vowelCount)
@@ -12,3 +13,8 @@ console.log(priceA)
 console.log(priceB)
 console.log(priceC)
 console.log(priceD)
+
+;(async () => {
+    const allData = await fetchAllPokemon()
+    console.log(allData)
+})()
