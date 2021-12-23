@@ -5,4 +5,4 @@ Please check [Unit test](https://hack-react.netlify.app/handson/tests.html) for 
 ## Tech stack
 
 - TypeScript
-- Jest (Mocha, Jasmine)
+- Jest (Vitest, Mocha, Jasmine)

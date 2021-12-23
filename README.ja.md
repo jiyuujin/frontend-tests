@@ -5,4 +5,4 @@
 ## 技術スタック
 
 - TypeScript
-- Jest (Mocha, Jasmine)
+- Jest (Vitest, Mocha, Jasmine)
