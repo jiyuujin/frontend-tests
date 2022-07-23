@@ -7,25 +7,25 @@ const NORMAL_CONSUMPTION_TAX_RATE = 10
  * @param isReducedTax
  */
 export const getPaymentTotal = (priceTexts: Array<string>, isReducedTax: boolean): string => {
-    let price: number = 0
-    let errorText: string = ''
+  let price: number = 0
+  let errorText: string = ''
 
-    priceTexts.forEach((priceText: string) => {
-        if (isNaN(formatToNumber(priceText))) {
-            // 数値に変換できなかった場合
-            errorText = 'ERROR'
-        } else {
-            price += formatToNumber(priceText)
-        }
-    })
-
-    if (errorText) {
-        return errorText
+  priceTexts.forEach((priceText: string) => {
+    if (isNaN(formatToNumber(priceText))) {
+      // 数値に変換できなかった場合
+      errorText = 'ERROR'
+    } else {
+      price += formatToNumber(priceText)
     }
+  })
 
-    const taxedPrice = getReducedTax(price, isReducedTax)
+  if (errorText) {
+    return errorText
+  }
 
-    return formatToString(taxedPrice)
+  const taxedPrice = getReducedTax(price, isReducedTax)
+
+  return formatToString(taxedPrice)
 }
 
 /**
@@ -34,10 +34,10 @@ export const getPaymentTotal = (priceTexts: Array<string>, isReducedTax: boolean
  * @param isReducedTax
  */
 export const getReducedTax = (totalPrice: number, isReducedTax: boolean): number => {
-    if (isReducedTax) {
-        return totalPrice * (100 + REDUCED_CONSUMPTION_TAX_RATE) / 100
-    }
-    return totalPrice * (100 + NORMAL_CONSUMPTION_TAX_RATE) / 100
+  if (isReducedTax) {
+    return (totalPrice * (100 + REDUCED_CONSUMPTION_TAX_RATE)) / 100
+  }
+  return (totalPrice * (100 + NORMAL_CONSUMPTION_TAX_RATE)) / 100
 }
 
 /**
@@ -45,7 +45,7 @@ export const getReducedTax = (totalPrice: number, isReducedTax: boolean): number
  * @param text
  */
 export const formatToNumber = (text: string): number => {
-    return parseInt(text)
+  return parseInt(text)
 }
 
 /**
@@ -53,5 +53,5 @@ export const formatToNumber = (text: string): number => {
  * @param value
  */
 export const formatToString = (value: number): string => {
-    return value.toString()
+  return value.toString()
 }

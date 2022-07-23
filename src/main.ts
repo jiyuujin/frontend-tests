@@ -13,8 +13,7 @@ console.log(priceA)
 console.log(priceB)
 console.log(priceC)
 console.log(priceD)
-
 ;(async () => {
-    const allData = await fetchAllPokemon()
-    console.log(allData)
+  const allData = await fetchAllPokemon()
+  console.log(allData)
 })()

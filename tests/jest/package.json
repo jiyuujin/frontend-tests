@@ -16,7 +16,9 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "setupFiles": ["./setup-files.js"],
+    "setupFiles": [
+      "./setup-files.js"
+    ],
     "transform": {
       ".(ts|tsx)": "ts-jest"
     },

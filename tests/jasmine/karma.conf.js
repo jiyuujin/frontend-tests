@@ -9,6 +9,6 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    concurrency: Infinity
+    concurrency: Infinity,
   })
 }

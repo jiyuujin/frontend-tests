@@ -1,9 +1,6 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "types": [
-      "@types/chai",
-      "@types/mocha"
-    ]
+    "types": ["@types/chai", "@types/mocha"]
   }
 }
