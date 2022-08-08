@@ -1,0 +1,21 @@
+title: "フロントエンドでテストを始める"
+summary: 
+  テストを書いてみたい人 / バックエンド経験があり、フロントを触ってみたい人へ
+
+  ユニットテストの基礎として Jest を利用して、簡易的な動作検証を書いていきます。
+
+topics: ["zenn", "test", "jest", "vitest"] # 5 つまで
+published: false # 下書きは false
+price: 0
+chapters:
+  - page1
+  # 今回のゴールを説明する
+  - page2
+  # そもそもテストとは
+  # 概要を書く
+  - page3
+  # 環境構築: Jest を導入する
+  - page4
+  # 環境構築: Vitest を導入する
+  - page5
+  # 謝辞
