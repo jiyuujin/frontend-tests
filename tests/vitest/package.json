@@ -7,9 +7,11 @@
     "test:cov": "vitest --coverage"
   },
   "devDependencies": {
-    "c8": "^7.10.0",
-    "vite": "^2.7.6",
-    "vitest": "^0.0.109"
+    "@types/node-fetch": "^2.6.2",
+    "c8": "^7.12.0",
+    "node-fetch": "^2.6.7",
+    "vite": "^3.0.5",
+    "vitest": "^0.21.1"
   },
   "type": "module"
 }
