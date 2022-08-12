@@ -1,3 +1,3 @@
 ---
-title: "Vitest を導入する"
+title: 'Vitest を導入する'
 ---

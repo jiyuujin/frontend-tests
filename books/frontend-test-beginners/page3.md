@@ -1,3 +1,3 @@
 ---
-title: "Jest を導入する"
+title: 'Jest を導入する'
 ---
