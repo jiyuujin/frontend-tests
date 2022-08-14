@@ -328,30 +328,13 @@ jest.mock('node-fetch', () => {
 
 describe('fetch-mock test', () => {
   it('Check pokemon response', async () => {
-    const dummyResponse: any = Promise.resolve({
-      ok: true,
-      status: 200,
-      json: () => {
-        return {
-          msg: 'Success',
-        }
-      },
-    })
+    jest.mock('node-fetch')
 
-    const spyFetch = fetch as jest.MockedFunction<typeof fetch>
-    spyFetch.mockImplementation(() => dummyResponse)
+    fetch.mockReturnValue(Promise.resolve({ json: () => Promise.resolve({ count: 1154 }) }))
 
-    await dummyResponse
+    const { count } = await fetchAllPokemon()
 
-    console.log(dummyResponse)
-
-    fetchAllPokemon()
-      .then((data) => {
-        console.log(data)
-      })
-      .catch((err) => {
-        console.error(err.message)
-      })
+    expect(count).toBe(1154)
   })
 })
 ```

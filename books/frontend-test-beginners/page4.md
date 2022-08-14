@@ -240,7 +240,7 @@ it('Result when input abc', () => {
 ### 非同期コードを検証する
 
 ::: details 解答例
-[Pokemon アプリ (Vite)](https://github.com/jiyuujin/pokemon-vite) では swr を利用したが、その `SWRConfig` を用いることができます。
+まずはシンプルに node-fetch を利用した場合のテストを、そして [Pokemon アプリ (Vite)](https://github.com/jiyuujin/pokemon-vite) で swr を利用した場合のテストを書くことができます。
 
 ```js
 import { defineConfig } from 'vite'
@@ -252,7 +252,37 @@ export default defineConfig({
 })
 ```
 
+なお、 Vitest では Jest のような mock を設定しなくてもテストを書くことができます。
+
 実際の処理メソッドは下記の通りです。
+
+```tsx
+const fetch = require('node-fetch')
+
+export const fetchAllPokemon = async (): Promise<any> => {
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=200`)
+  const data = await res.json()
+  return data
+}
+```
+
+`https://pokeapi.co/api/v2/pokemon` から正しく届いているか、レスポンスを確認します。
+
+```tsx
+describe('fetch-mock test', () => {
+  it('Check pokemon response', async () => {
+    vi.mock('node-fetch')
+
+    fetch.mockReturnValue(Promise.resolve({ json: () => Promise.resolve({ count: 1154 }) }))
+
+    const { count } = await fetchAllPokemon()
+
+    expect(count).toBe(1154)
+  })
+})
+```
+
+また SWR を利用した際の処理メソッドは、下記の通りです。
 
 ```tsx
 import useSWR from 'swr'
@@ -284,12 +314,6 @@ it('Check custom response', async () => {
 
   console.log(customRender)
 })
-```
-
-なお、 Vitest では mock を設定できます。
-
-```js
-vi.mock('node-fetch', () => global.fetch)
 ```
 
 :::
