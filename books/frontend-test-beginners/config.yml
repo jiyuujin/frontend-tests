@@ -18,4 +18,6 @@ chapters:
   - page4
   # 環境構築: Vitest を導入する
   - page5
+  # 結合テストを書く
+  - page6
   # 謝辞
