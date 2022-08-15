@@ -344,16 +344,25 @@ describe('fetch-mock test', () => {
 ### snapshot を撮影する
 
 ::: details 解答例
-snapshot を撮影します。
+snapshot の撮影も [@testing-library/react](https://www.npmjs.com/package/@testing-library/react) を利用します。
+
+https://testing-library.com/
+
+```bash
+npm install -D @testing-library/react
+```
+
+ここで React Testing Library 自体にも明確な担当領域を持つため Jest の代わりとして使うことはありません。
+
+@testing-library/react の基本は `render` 関数です。
 
 ```tsx
-import React from 'react'
-import renderer from 'react-test-renderer'
+import { render } from '@testing-library/react'
 
 import { Card } from './Card'
 
 test('Render component', () => {
-  const component = renderer.create(
+  const { component } = render(
     <Card
       pokemon={{
         name: 'unown',
@@ -361,15 +370,36 @@ test('Render component', () => {
       }}
     />,
   )
-  expect(component).toMatchSnapshot()
 })
 ```
 
-props から正しく値が渡されているか、文字列を確認します。
+`render` の戻り値を使って `expect` を記述します。
 
 ```tsx
-import React from 'react'
-import renderer from 'react-test-renderer'
+import { render } from '@testing-library/react'
+
+import { Card } from './Card'
+
+test('Render component', () => {
+  const { component } = render(
+    <Card
+      pokemon={{
+        name: 'unown',
+        url: 'https://pokeapi.co/api/v2/pokemon/201/',
+      }}
+    />,
+  )
+  expect(component()).toMatchSnapshot()
+})
+```
+
+なお [react-test-renderer](https://www.npmjs.com/package/react-test-renderer) を利用しても screenshot を撮影できる一方、既に @testing-library/react へ置き換えられているというのが実際の現状でもあります。
+
+続いて props から正しく値が渡されているか、文字列を確認します。
+
+`render` の戻り値を使って `expect` を記述します。
+
+```tsx
 import { render } from '@testing-library/react'
 
 import { Card } from './Card'
