@@ -18,6 +18,8 @@ chapters:
   - page4
   # 環境構築: Vitest を導入する
   - page5
-  # 結合テストを書く
+  # Testing Library を利活用する
   - page6
+  # Redux 併用のテストを書く
+  - page7
   # 謝辞
