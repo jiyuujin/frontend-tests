@@ -39,14 +39,47 @@ npm trends で見てもらっても明らかだが、最近は [Jest](https://je
 
 #### ユニットテストの種類
 
+下記に示すように 4 つのユニットテストが存在します。
+
 - [Jest](https://jestjs.io/)
 - [Vitest](https://vitest.dev/)
 - [Mocha](https://mochajs.org/)
 - [Jasmine](https://jasmine.github.io/)
 
+今回の Zenn book 執筆にあたって Mocha と Jasmine を割愛させていただきます。以下簡単な説明ではございますが Mocha と Jasmine の概要に触れさせていただきました。
+
+Mocha は Node.js 上で動作する JavaScript のテストフレームワークです。基本的に Jest と同じく Mocha はアサーションやモックのために [Enzyme](https://enzymejs.github.io/enzyme/) など他のライブラリと組み合わせることができます。
+
+:::message
+
+Enzyme は [React](https://ja.reactjs.org/) 専用に設計されているライブラリで、シャローレンダリングとマウントテストの 2 種類のテスト方法を提供している。
+
+:::
+
+Mocha の利点に以下のようなものが挙げられる一方、他のライブラリをインポートする必要があります。
+
+- Web ブラウザのサポートが存在する
+- 非同期のテストを書ける
+- アサーションライブラリを使用できる
+
+Jasmine は Web ブラウザと Node.js のためのシンプルな JavaScript のテストフレームワークです。原則として動作駆動型の開発パターンに従っているため、一般的には使用前に設定が行われます。
+
+Jasmine の利点に以下のようなものが挙げられる一方、完璧なテストフレームワークとは言えない現状があります。スナップショットテストにサポートしていないこと、並列化やネイティヴ DOM を操作するためにサードパーティライブラリを必要とすることが挙げられるためです。
+
+- テストに DOM を必要としない
+- フロントエンドとバックエンドのテストに採用できる
+- 非同期関数のテストを書ける
+- 多種多様なアサーションを使用できる
+  - 等値チェッカーアサーション
+  - マッチャーアサーション
+
 ### 結合テスト
 
-技術スタックに [React](https://ja.reactjs.org/) を採用している場合で [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) や [Enzyme](https://enzymejs.github.io/enzyme/) などを利用して、コンポーネントや hooks を組み合わせて正しく動作するかテストを書きます。
+技術スタックに React を採用している場合で [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) や Enzyme などを利用して、コンポーネントや hooks を組み合わせて正しく動作するかテストを書きます。
+
+なお、この Enzyme は React 専用に設計されており、子コンポーネントを持たないユニットとしてのコンポーネントのテストに役立つシャローレンダリングと、マウントテストの 2 種類のテスト方法を提供しています。
+
+出力されたものを操作・トラバースしたり、ある意味ではランタイムをシミュレートできたりするライブラリです。コンポーネントのレンダリング、要素の検索、要素とのインタラクションを支援しています。
 
 ### E2E (End to End) テスト
 

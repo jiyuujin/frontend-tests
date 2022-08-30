@@ -13,9 +13,11 @@ https://github.com/jiyuujin/pokemon
 - Jest 単体でその挙動を確認する
 - React に Jest を組み込んでその挙動を確認する
 
-最近ぽっと出てきた [Vitest](https://vitest.dev/) を使う際も、事前に Jest を理解しておくことをおすすめします。
+[CRA](https://www.npmjs.com/package/create-react-app) (create-react-app) や、目下流行っているとされる [Next.js](https://www.npmjs.com/package/next) の下でユニットテストを書く際に、ほぼ間違い無く Jest でユニットテストを書いていることでしょう。
 
-その理由こそ、互いに Jest と Vitest は相通ずる部分が多いからです。
+また最近ぽっと出てきた [Vitest](https://vitest.dev/) でユニットテストを書く際も、事前に Jest でユニットテストを書いておけるようになっておくことをおすすめします。
+
+そうした背景があってこそ、互いに Jest と Vitest は相通ずる部分が多いからです。
 
 ## Jest 開発環境を構築する
 
