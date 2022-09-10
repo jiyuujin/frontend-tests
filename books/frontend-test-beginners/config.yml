@@ -18,8 +18,8 @@ chapters:
   - page4
   # 環境構築: Vitest を導入する
   - page5
-  # Testing Library を利活用する
+  # Jest で Testing Library を利用する
   - page6
-  # Redux 併用のテストを書く
+  # React Router や Redux と併用しているテストを書く
   - page7
   # 謝辞

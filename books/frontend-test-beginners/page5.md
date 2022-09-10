@@ -1,8 +1,8 @@
 ---
-title: 'Testing Library を利活用する'
+title: 'Jest で Testing Library を利用する'
 ---
 
-# Testing Library を利活用する
+# Jest で Testing Library を利用する
 
 これまで Jest や Vitest を導入する方法について学習しましたが、この章では [@testing-library/react-hook](https://www.npmjs.com/package/@testing-library/react-hooks) と [@testing-library/user-event](https://www.npmjs.com/package/@testing-library/user-event) を使用します。
 
